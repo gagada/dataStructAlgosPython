@@ -1,7 +1,7 @@
 '''
 DATE: 2019-11-06
 NAME: GERARD AGADA BCOMP,BCOMM
-GITHUB USERNAME: GCAGADA
+GITHUB USERNAME: GAGADA
 DESC: A basic python program that computes the grade-point-average GPA
 '''
 print("Hello, Welcome to the GPA Calculator.")

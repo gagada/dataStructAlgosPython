@@ -10,7 +10,7 @@ import random
 #Reinforcement
 
 '''
-R-1.1 Write a short Python, is multiple(n,m), that takes two integer
+R-1.1 Write a short Python function, is multiple(n,m), that takes two integer
 values and returns True if n is a ultiple of m, that is n = mi for 
 some integer i, and False otherwise.
 '''
@@ -36,6 +36,7 @@ R-1.3 Write a short Python function, minmax(data), that takes a sequence of
 one or more numbers, and returns the smallest and largest numbers, in the 
 form of a tuplw of length two. Do not use the built-in functions min or 
 max in implementing your solution.
+----> print(data) in function if you want a clearer picture.
 '''
 def minmax(data):
 	min_data = data[0]
@@ -47,19 +48,44 @@ def minmax(data):
 		elif data[i] >= max_data:
 			max_data = data[i]
 	return min_data, max_data
-
+'''
+R-1.4 Write a short Python function that takes a positive integer n and returns
+the sum of the squares of all the positive integers smaller than n.
+'''
+def sum_squares(n):
+	i_squared = 0
+	square_list = []
+	for i in range(1,n):
+		square_list.append(i)
+		i_squared += math.pow(i,2)
+	result = math.pow(sum(square_list),2)/len(square_list)
+	reuslt = i_squared - result
+	return reuslt 
 def main():
 	
-	print("is_multiple Test")
+	print("*is_multiple Test*")
 	n = random.randint(0,20)
 	m = 2
 	result = is_multiple(n,m)
 	print(n)
 	print(result,"\n")
-	print("is_even Test")
+	
+	print("*is_even Test*")
 	k = random.randint(0,20)
 	print(k)
-	print(is_even(k))    
+	print(is_even(k))
+
+	print("*minmax Test*")
+	data = [random.randint(1,20) for i in range (10)]
+	nmin,nmax = minmax(data)
+	print("Min:", nmin)
+	print("Max", nmax)
+
+	print("*sum_squares Test*")
+	n = random.randint(1,21)
+	ss = sum_squares(n)
+	print("n = ", n)
+	print("Sum of squares", ss)
 
 if __name__ == "__main__":
     main()

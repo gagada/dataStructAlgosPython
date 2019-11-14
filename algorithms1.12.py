@@ -61,6 +61,27 @@ def sum_squares(n):
 	result = math.pow(sum(square_list),2)/len(square_list)
 	reuslt = i_squared - result
 	return reuslt 
+'''
+R-1.5 Give a single command that computes the sum from the Top exercise
+relying on Python's comprehension syntax and the built-in sum function
+'''
+total = sum(k * k for k in range(1,10))
+
+'''
+R-1.6 Write a short Python function that takes a positive integer n and returns
+the sum of the squares of all the odd positive intgers smaller than n.
+'''
+def oddsum_squares(n):
+	i_squared = 0
+	square_list = []
+	for i in range(1,n):
+		if(i % 2 == 1):
+			square_list.append(i)
+			i_squared += math.pow(i,2)
+	result = math.pow(sum(square_list),2)/len(square_list)
+	reuslt = i_squared - result
+	return reuslt   
+
 def main():
 	
 	print("*is_multiple Test*")
@@ -68,7 +89,7 @@ def main():
 	m = 2
 	result = is_multiple(n,m)
 	print(n)
-	print(result,"\n")
+	print(result)
 	
 	print("*is_even Test*")
 	k = random.randint(0,20)
@@ -86,6 +107,11 @@ def main():
 	ss = sum_squares(n)
 	print("n = ", n)
 	print("Sum of squares", ss)
+
+	print("*oddsum_squares Test*")
+	ss = oddsum_squares(n)
+	print("n = ", n)
+	print("Odd Sum of squares", ss)
 
 if __name__ == "__main__":
     main()
